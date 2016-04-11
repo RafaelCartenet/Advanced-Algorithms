@@ -34,9 +34,9 @@ while (c<len(cube))&(p<len(pyra)):
         p += 1
 # concaténation de la liste non vide restante
 if cube[c:] == []:
-    T=T + pyra[p:]
+    T += pyra[p:]
 else:
-    T=T + cube[c:]
+    T += cube[c:]
 
 # Initialisation du tableau Z
 Z=[]
