@@ -86,15 +86,15 @@ def LongestSubSequenceWithoutB(X, Y):
     return chaine
 
 # Remarques :
-# - En
+# - En changeant la priorité de la flèche haut et flèche gauche on obtient une chaîne différente.
 
 # Exemples :
 X = "ABCBDAB"
 Y = "BDCABA"
-print(LongestSubSequenceWithoutB(X, Y))
-print(LongestSubSequenceWithB(X, Y))
+print(LongestSubSequenceWithoutB(X, Y)) # BDAB
+print(LongestSubSequenceWithB(X, Y)) # BDAB
 
 X = "11010101"
 Y = "010110110"
-print(LongestSubSequenceWithoutB(X, Y))
-print(LongestSubSequenceWithB(X, Y))
+print(LongestSubSequenceWithoutB(X, Y)) # 010101
+print(LongestSubSequenceWithB(X, Y)) # 010101
