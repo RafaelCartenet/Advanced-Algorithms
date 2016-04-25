@@ -1,37 +1,34 @@
-# Prim algorith
+# Prim algorithm
 # Find the minimum spanning tree of a connected undirect graph.
 # Complexity O(n²)
 
 import heapq
+import operator
 
 def prim(graph, start):
     prev = {}
     dist = {}
     visited = set()
+
     for node in graph:
         prev[node] = -1
         dist[node] = float('inf')
-
     dist[start] = 0
+    remaining_nodes = [(dist[node], node) for node in graph]
 
-    Queue = [(dist[node], node) for node in graph]
-    heapq.heapify(Queue)
-
-    while Queue:
-        closest_node = heapq.heappop(Queue)[1]
+    while remaining_nodes:
+        heapq.heapify(remaining_nodes)
+        closest_node = heapq.heappop(remaining_nodes)[1]
         visited.add(closest_node)
         for node in get_neighbours(graph, closest_node):
             if node not in visited:
                 if graph[closest_node][node] < dist[node]:
                     dist[node] = graph[closest_node][node]
                     prev[node] = closest_node
-
-        while Queue:
-            heapq.heappop(Queue)
-        Queue = [(dist[node], node) for node in graph if node not in visited]
-        heapq.heapify(Queue)
-
+                    ind = list(map(operator.itemgetter(1), remaining_nodes)).index(node)
+                    remaining_nodes[ind] = (dist[node], node)
     return prev
+
 
 def add_edge(graph, edge, weight):
     edge = set(edge)
