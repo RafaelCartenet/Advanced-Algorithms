@@ -1,2 +1,2 @@
 # AdvancedAlgorithms
-Algorithmique et parallélismes avancés
+Advanced algorithms developped within INSA course  
