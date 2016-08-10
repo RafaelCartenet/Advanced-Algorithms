@@ -9,3 +9,6 @@ Advanced algorithms developped within INSA course :
 
 ## Graph theory
 - Prim (Prim algorithm. Goal : determine the Minimum spanning tree of a given graph)
+
+## Other
+- isPrime (returns a boolean whether the input is prime or not, based on an interesting property of prime numbers)
